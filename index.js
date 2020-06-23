@@ -24,10 +24,12 @@ function deleteFromDriverByKey(driver, key){
 }
 
 function destructivelyDeleteFromDriverByKey(driver, key){
+    console.log(`:::::DRIVER ${driver}:::key:::${key}:::VAL::;${driver[key]}`)
+    const newDriver = Object.assign({}, driver)
 
-    newDriver = Object.assign({}, driver)
-    console.log(`:::::newDriver ${newDriver}:::`)
     driver[key] = undefined
+    newDriver[key] = undefined
+    console.log(`:::::NEWDRIVER ${newDriver}:::key:::${key}:::VAL::;${newDriver[key]}`)
     
-    return newDriver
+    return driver
 }
